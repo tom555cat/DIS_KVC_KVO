@@ -951,8 +951,11 @@ void DSKeyValueWillChange(id object, id keyOrKeys, BOOL isASet, DSKeyValueObserv
                     BOOL detailsRetained;
                     DSKeyValueChangeDictionary *changeDictionary = nil;
                     
+                    // 如果KVO的options中有old，就会设置changeDetails中的oldValue字段。
                     willChangeDetailSetupFunc(&changeDetails, object, affectedKeyPath,keyPathExactMatch,eachObservance.options, changeInfo, &detailsRetained);
                     
+                    // 准备pushInfo中的NSKVOPendingChangeNotificationLocal，其中包含着newValue和oldValue等值，以及观察者，
+                    // 每处理一个observance，pushInfo中的notifications列表就增加一个。
                     willChangeNotificationPushFunc(object, keyOrKeys, eachObservance, changeDetails , forwardingValues, pushInfo);
                     
                     if(eachObservance.options & NSKeyValueObservingOptionPrior) {

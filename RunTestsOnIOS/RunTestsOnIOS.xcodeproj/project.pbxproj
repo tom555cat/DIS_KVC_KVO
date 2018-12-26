@@ -596,7 +596,7 @@
 				TargetAttributes = {
 					9127A2F41ED6F6010069CD54 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = B5VVHWEWBM;
+						DevelopmentTeam = NE8VK2242L;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -822,7 +822,7 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = B5VVHWEWBM;
+				DEVELOPMENT_TEAM = NE8VK2242L;
 				INFOPLIST_FILE = RunTestsOnIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -841,7 +841,7 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = B5VVHWEWBM;
+				DEVELOPMENT_TEAM = NE8VK2242L;
 				INFOPLIST_FILE = RunTestsOnIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -128,6 +128,8 @@ const CFArrayCallBacks DSKVOPendingNotificationArrayCallbacks = {
             for (NSUInteger i = 0; i < keyCount; ++i) {
                 NSString *key = keys[i];
                 if(key) {
+                    // willChangeValue
+                    // 准备好pushInfo信息，里面主要包含了对于每一个observance的notification构成的一个数组notifications。
                     DSKeyValueWillChange(self, key, NO,observationInfo,(DSKVOWillChangeDetailSetupFunc)DSKeyValueWillChangeBySetting,oldValuesDict,(DSKVOWillChangeNotificationPushFunc)DSKeyValuePushPendingNotificationLocal,&pushInfo,nil);
                 }
             }
@@ -143,6 +145,13 @@ const CFArrayCallBacks DSKVOPendingNotificationArrayCallbacks = {
         }
     }
     
+    /*
+     *^{
+     *  IMP imp = class_getMethodImplementation(info->originalClass, selector);
+     *  setValueWithImplementation(imp);
+     *}
+     */
+    // block的内容，就是origianlClass的set方法，不带有willChangeValueForKey/DidChangeValueForKey
     if(block) {
         block();
     }

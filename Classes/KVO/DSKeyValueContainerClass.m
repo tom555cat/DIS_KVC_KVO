@@ -250,6 +250,7 @@ void _DSKVONotifyingEnableForInfoAndKey(DSKeyValueNotifyingInfo *info, NSString 
     CFSetAddValue(info->notifyingKeys, (CFStringRef)key);
     pthread_mutex_unlock(&info->mutex);
     
+    // 获取setter这个东西
     DSKeyValueSetter * setter = _DSKeyValueSetterForClassAndKey(info->originalClass, key, info->originalClass);
     if([setter isKindOfClass: [DSKeyValueMethodSetter class]]) {
         Method setMethod = [(DSKeyValueMethodSetter *)setter method];
