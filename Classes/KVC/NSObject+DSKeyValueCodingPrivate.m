@@ -524,6 +524,7 @@ void _DSKeyValueInvalidateAllCachesForContainerAndKey(Class containerClassID, NS
     [key getCString:key_cstr maxLength:key_cstr_len + 1 encoding:NSUTF8StringEncoding];
     
     Method method = NULL;
+    // 从当前类中查找是否存在"set%s:"，或者"_set%s:"，或者"setIs%s:"样式的setter方法
     if ((method = DSKeyValueMethodForPattern(self, "set%s:", key_cstr_upfirst)) ||
         (method = DSKeyValueMethodForPattern(self, "_set%s:", key_cstr_upfirst)) ||
         (method = DSKeyValueMethodForPattern(self, "setIs%s:", key_cstr_upfirst))
